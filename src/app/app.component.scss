@@ -1,0 +1,25 @@
+.section {
+    width: 100%;
+    .header{
+        > 
+        img {
+            width: 100%;
+            opacity: 0.8;
+            position: fixed;
+        }
+    }
+    .wrapper {
+        width: 1200px;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        
+        .wrap {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap-reverse;
+           
+        }
+        
+    }
+}

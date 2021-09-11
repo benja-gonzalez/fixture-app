@@ -1,0 +1,150 @@
+<div class="main" fxFlex="100">
+    
+    <div class="column"><!-- COLUMN -->
+        <div class="group round"><!-- R1 -->
+            <div class="player"> {{ players[0]?.name }} </div>
+            <div class="player"> {{ players[1]?.name }} </div>
+        </div>
+        <div class="group"><!-- CUARTOS 1 -->
+            <div class="group"><!-- SPACING -->
+                <div class="player"></div>
+                <div class="player"></div>
+                <div class="player"></div>
+                <div class="player"></div>
+            </div>
+            <div class="player"></div>
+            <div class="player cuartos"> W1 </div><!-- WINNER R1 -->
+        </div>
+        <div class="group"><!-- CUARTOS 1 -->
+            <div class="group"><!-- SPACING -->
+                <div class="player"></div>
+                <div class="player"></div>
+                <div class="player"></div>
+                <div class="player"></div>
+            </div>
+            <div class="player"></div>
+            <div class="player cuartos"> W2 </div><!-- WINNER R2 -->
+        </div>
+        <div class="group round"><!-- R2 -->
+            <div class="player"> {{ players[3]?.name }} </div>
+            <div class="player"> {{ players[2]?.name }} 1 </div>
+        </div>
+    </div>
+    <div class="column"><!-- COLUMN -->
+        <div class="group round"><!-- R3 -->
+            <div class="player"> {{ players[5]?.name }} </div>
+            <div class="player"> {{ players[4]?.name }} </div>
+        </div>
+        <div class="group"><!-- CUARTOS 2 -->
+            <!-- WINNER r3 -->
+            <div class="player cuartos"> W3 </div>
+            <div class="player"></div>
+            <!-- SPACING -->
+            <div class="group">
+                <div class="player"></div>
+                <div class="player"></div>
+                <div class="player"></div>
+                <div class="player"></div>
+            </div>
+        </div>
+        <div class="group"><!-- CUARTOS 2-->
+            <!-- WINNER r4 -->
+            <div class="player cuartos"> W4 </div>
+            <div class="player"></div>
+            <div class="group"><!-- SPACING -->
+                <div class="player"></div>
+                <div class="player"></div>
+                <div class="player"></div>
+                <div class="player"></div>
+            </div>
+        </div>
+        <div class="group round"><!-- R4 -->
+            <div class="player"> {{ players[6]?.name }} </div>
+            <div class="player"> {{ players[7]?.name }} </div>
+        </div>
+    </div>
+    <div class="column"><!-- FINAL PATH -->
+        <div class="group">
+            <div class="semifinal"><!-- SEMIFINALES -->
+                <div class="group round"><!-- SEMIFINAL 1 -->
+                    <div class="player"> W C 1 </div><!-- WINNER CUARTOS 1 -->
+                    <div class="player"> W C 2 </div><!-- WINNER CUARTOS 2 -->
+                </div>
+                <div class="group round final"><!-- FINAL -->
+                    <div class="player"> W SF 1 </div> 
+                    <div><strong>VS</strong></div>
+                    <div class="player"> W SF 2 </div>
+                </div>
+                <div class="group round"><!-- SEMIFINALES -->
+                    <div class="player">W C 4</div><!-- WINNER CUARTOS 4 -->
+                    <div class="player">W C 3</div><!-- WINNER CUARTOS 5 -->
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="column"><!-- COLUMN -->
+        <div class="group round"><!-- R5 -->
+            <div class="player"> {{ players[9]?.name }} </div>
+            <div class="player"> {{ players[8]?.name }} </div> 
+        </div>
+        <div class="group"><!-- CUARTOS 3 -->
+            <div class="group"><!-- SPACING -->
+                <div class="player"></div>
+                <div class="player"></div>
+                <div class="player"></div>
+                <div class="player"></div>
+            </div>
+            <div class="player"></div>
+            <div class="player cuartos"> W5 </div><!-- WINNER R5 -->
+        </div>
+        <div class="group"><!-- CUARTOS 3 -->
+            <div class="group"><!-- SPACING -->
+                <div class="player"></div>
+                <div class="player"></div>
+                <div class="player"></div>
+                <div class="player"></div>
+            </div>
+            <div class="player"></div>
+            <div class="player cuartos"> W6 </div><!-- WINNER R6 -->
+        </div>
+        <div class="group round"><!-- R6 -->
+            <div class="player"> {{ players[10]?.name }} </div>
+            <div class="player"> {{ players[11]?.name }} </div>
+        </div>
+    </div>
+
+    <div class="column"><!-- COLUMN -->
+        <div class="group round"><!-- R7 -->
+            <div class="player"> {{ players[12]?.name }} </div>
+            <div class="player"> {{ players[13]?.name }} </div>
+        </div>
+        <div class="group"><!-- CUARTOS 4 -->
+            <div class="player cuartos"> W7 </div><!-- WINNER R7 -->
+            <div class="player"></div>
+            <div class="group"><!-- SPACING -->
+                <div class="player"></div>
+                <div class="player"></div>
+                <div class="player"></div>
+                <div class="player"></div>
+            </div>
+        </div>
+        <div class="group"><!-- CUARTOS 4 -->
+            <div class="player cuartos"> W8 </div><!-- WINNER R8 -->
+            <div class="player"></div>
+            <div class="group"><!-- SPACING -->
+                <div class="player"></div>
+                <div class="player"></div>
+                <div class="player"></div>
+                <div class="player"></div>
+            </div>
+        </div>
+        <div class="group round"><!-- R8 -->
+            <div class="player"> {{ players[15]?.name }} </div>
+            <div class="player"> {{ players[14]?.name }} </div>
+        </div>
+    </div>
+    <div>
+        <button (click)="click()" mat-button>click me!</button>
+    </div>
+</div>

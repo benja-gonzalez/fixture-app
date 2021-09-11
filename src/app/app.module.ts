@@ -20,12 +20,14 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
  */
 import { MainComponent } from './admin/main/main.component';
 import { FixtureComponent } from './components/fixture/fixture.component';
+import { LoginComponent } from './admin/login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainComponent,
-    FixtureComponent
+    FixtureComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

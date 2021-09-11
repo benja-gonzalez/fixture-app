@@ -19,6 +19,7 @@ export class MainComponent implements OnInit, OnDestroy, AfterViewInit {
 	semifinal: Participantes = [];
 	final: Finalista = [null, null];
 	next: string = CUARTOS;
+	isLogged$: boolean = false;
 	
 	constructor(private _ds: DataService) {
 		_DATA$.then(m => this.items = m); //this.players =

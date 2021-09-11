@@ -1,40 +1,48 @@
-<div class="section">
 
-	<div class="wrapper">
-		<form (submit)="onSubmit(participante)">
-			
-			<mat-form-field appearance="outline">
-				<input matInput [placeholder]="'Agregar Participante'" name="participante" [(ngModel)]="participante">
-				<!-- <mat-label> </mat-label> -->
-				<mat-hint><strong> siguiente: ronda({{ next }}) </strong></mat-hint>
-				<!--  -->
+<ng-container *ngIf="!isLogged$; else isLogged">
+	<div>hola mundo</div>
+	
+</ng-container>
+<ng-template #isLogged>
+	<div class="section">
+
+		<div class="wrapper">
+			<form (submit)="onSubmit(participante)">
 				
-			</mat-form-field>
-           <mat-form-field appearance="outline">
-               <input disabled matInput [placeholder]="'quedan '+ items.length">
-            <mat-label><strong> Quedan:({{ items.length }}) </strong></mat-label>
-           </mat-form-field>
-
-			<button class="button-save" mat-button type="submit" (click)="save()"> save data</button>
-		</form>
-		<div class="wrap" *ngIf="items.length > 0">
-			<mat-list>
-				<mat-list-item *ngFor="let item of items"> 
-					<div class="field">
-						{{item.name}} 
-					</div>
-					<mat-checkbox [(ngModel)]="item.isWinner" class="example-margin">winner</mat-checkbox>
-					<button (click)="remove(item.name)" mat-icon-button type="button">
-						<mat-icon class="icon-size-5" matSufix >close</mat-icon>
-					</button>
-				</mat-list-item>
-			</mat-list>
+				<mat-form-field appearance="outline">
+					<input matInput [placeholder]="'Agregar Participante'" name="participante" [(ngModel)]="participante">
+					<!-- <mat-label> </mat-label> -->
+					<mat-hint><strong> siguiente: ronda({{ next }}) </strong></mat-hint>
+					
+				</mat-form-field>
+			   <mat-form-field appearance="outline">
+				   <input disabled matInput [placeholder]="'quedan '+ items.length">
+				<mat-label><strong> Quedan:({{ items.length }}) </strong></mat-label>
+			   </mat-form-field>
+	
+				<button class="button-save" mat-button type="submit" (click)="save()"> save data</button>
+			</form>
+			<div class="wrap" *ngIf="items.length > 0">
+				<mat-list>
+					<mat-list-item *ngFor="let item of items"> 
+						<div class="field">
+							{{item.name}} 
+						</div>
+						<mat-checkbox [(ngModel)]="item.isWinner" class="example-margin">winner</mat-checkbox>
+						<button (click)="remove(item.name)" mat-icon-button type="button">
+							<mat-icon class="icon-size-5" matSufix >close</mat-icon>
+						</button>
+					</mat-list-item>
+				</mat-list>
+			</div>
+			<div class="button-shuffle">
+				<button color="accent" mat-button (click)="nextRound(next)">
+					next round !
+				</button>
+			</div>
+			
 		</div>
-		<div class="button-shuffle">
-			<button color="accent" mat-button (click)="nextRound(next)">
-				next round !
-			</button>
-		</div>
-		
 	</div>
-</div>
+</ng-template>
+
+

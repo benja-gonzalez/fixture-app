@@ -9,17 +9,7 @@
         }
     }
     .wrapper {
-        width: 1200px;
-        margin: auto;
-        display: flex;
-        flex-direction: column;
-        
-        .wrap {
-            display: flex;
-            flex-direction: column;
-            flex-wrap: wrap-reverse;
-           
-        }
-        
+        width: 100%!important;
+        margin: auto;        
     }
 }

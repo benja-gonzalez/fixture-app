@@ -14,7 +14,9 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSelectModule } from '@angular/material/select';
-import {MatCheckboxModule} from '@angular/material/checkbox';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatTableModule } from '@angular/material/table';
 /**
  * Components 
  */
@@ -43,7 +45,9 @@ import { LoginComponent } from './admin/login/login.component';
     MatListModule,
     MatIconModule,
     MatSelectModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatGridListModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

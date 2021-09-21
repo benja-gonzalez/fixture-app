@@ -59,8 +59,9 @@
 				<mat-list-item *ngFor="let item of items" >
 					{{ item.name}}
 					<div>
-						<button mat-mini-fab color="primary"><mat-icon>check</mat-icon></button>
-						<button mat-mini-fab color="accent"><mat-icon>close</mat-icon></button>
+						<!-- <button mat-mini-fab color="primary"><mat-icon>check</mat-icon></button> -->
+						<!-- <button mat-mini-fab color="accent"><mat-icon>close</mat-icon></button> -->
+						<mat-checkbox [(ngModel)]="item.isWinner">winner</mat-checkbox>
 					</div>
 				</mat-list-item>
 			</mat-list>

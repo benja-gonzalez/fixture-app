@@ -11,19 +11,26 @@ const _DATA$ = import('../../../assets/data').then(m => m.getData());
 })
 export class FixtureComponent implements OnInit, AfterViewInit {
    
-	players: Participantes = [];
+	players: Participantes;
 
-	constructor(private _ds: DataService) { }
+	constructor(private _ds: DataService) {
+		this.players = _ds.readData();
+	}
 
-	ngOnInit(): void { }
+	ngOnInit(): void {
+		this._ds.getData().subscribe(
+			changes => { console.log({changes});this.players = changes}
+		);
+	 }
 	/**
 	 * Default angular ngAfterViewInit() hook
 	 */
 	ngAfterViewInit(): void {
 		this._ds.getData().subscribe(
-			changes => this.players = changes
+			changes => { console.log({changes});this.players = changes}
 		);
 	}
 	click() {
+		window.location.reload()
 	}
 }

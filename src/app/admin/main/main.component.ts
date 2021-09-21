@@ -3,7 +3,7 @@ import { FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import { DataService } from '../../services/data.service';
 import { CUARTOS, FINAL, Finalista, Participante, Participantes, SEMIFINAL } from '../../types/types';
 import { LoginService } from '../login/login.service';
-///const _DATA$ = import('../../../assets/data').then(m => m.getData());
+const _DATA$ = import('../../../assets/data').then(m => m.getData());
 
 @Component({
   selector: 'app-main',
@@ -29,7 +29,7 @@ export class MainComponent implements OnInit, OnDestroy, AfterViewInit {
 	hide: boolean = true;
 
 	constructor(private _ds: DataService, private _ls: LoginService) {
-		//_DATA$.then(m => this.items = m);
+		_DATA$.then(m => this.items = m);
 	}
 	/**
 	 * Angular default ngOnInit() hook

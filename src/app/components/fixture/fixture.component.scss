@@ -81,6 +81,7 @@
                 width: 33.33333%!important;
                 .player {
                     width: 60%!important;
+                    text-shadow: 0 0 2px #000000;
                 }
             }
             .group.round.final {
@@ -112,7 +113,7 @@
     .column .semifinal {
         width: 1300px;
         margin: auto;
-        transform: translateX(-250px);
+        /* transform: translateX(-250px); */
     }
     
 }

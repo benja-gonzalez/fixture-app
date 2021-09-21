@@ -118,6 +118,7 @@ export class MainComponent implements OnInit, OnDestroy, AfterViewInit {
 			case FINAL:
 				{
 					const response = this.items.filter(v => v.isWinner === true);
+					//this._saveWinners();
 					this.save();
 					return this._resetPlayers(response);
 				}
@@ -136,7 +137,7 @@ export class MainComponent implements OnInit, OnDestroy, AfterViewInit {
 	 * @returns a new player
 	 */
 	private _createParticipante(name: string): Participante {
-		return { name, isWinner: false };
+		return { name, isWinner: false, id: this.items.length };
 	}
 	/**
 	 * Reset players from an array 'from'
@@ -150,6 +151,9 @@ export class MainComponent implements OnInit, OnDestroy, AfterViewInit {
 				value.isWinner = false;
 			});
 		return from;
+	}
+	private _saveWinners(arr:any): any {
+		let result = [];
 	}
 
 }

@@ -21,7 +21,6 @@ import { MatTableModule } from '@angular/material/table';
  * Components 
  */
 import { MainComponent } from './admin/main/main.component';
-import { FixtureComponent } from './components/fixture/fixture.component';
 import { LoginComponent } from './admin/login/login.component';
 import { GridComponent } from './components/grid/grid.component';
 
@@ -29,7 +28,6 @@ import { GridComponent } from './components/grid/grid.component';
   declarations: [
     AppComponent,
     MainComponent,
-    FixtureComponent,
     LoginComponent,
     GridComponent
   ],

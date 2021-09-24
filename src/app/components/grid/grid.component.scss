@@ -2,10 +2,9 @@
 
 .section {
     overflow-x: hidden;
-    background: url('../../../assets/header/fondo2.jpg');
+    background: url('../../../assets/header/fondo3.png');
     background-repeat: no-repeat;
     background-size: 100%;
-    opacity: .3;
 
     .flexible {
         display: flex;
@@ -18,9 +17,10 @@
             padding: 10px;
             text-align: center;
             width: 100%;
-            text-shadow: 0px 0px 2px #000000 ;
+            text-shadow: 0px 0px 2px #FFFFFF ;
             background-color: #000000;
             color: white;
+            opacity: .5;
         }
     }
     .flexible.content {
@@ -36,7 +36,7 @@
         margin-top: 20px;
         margin: 0 30px 0 10px;
         height: 600px;
-        
+        opacity: .5;
         > div {
             border: 2px solid #9D4EDD;
             padding: 10px;
@@ -48,6 +48,14 @@
             background-color: #000000;
             color: white;
         }
+        &.lines-reverse div {
+            position: relative;
+        }
+        &.lines div {
+            position: relative;
+        }
+    }
+}
        /*  &.lines div::before {
             content: "";
             position: absolute;
@@ -58,9 +66,7 @@
             top: -50%;
             left: -15%;
         } */
-        &.lines div {
-            position: relative;
-        }
+        
         /* &.lines div::after {
             content: "";
             position: absolute;
@@ -80,9 +86,7 @@
             top: -50%;
             right: -15%;
         } */
-        &.lines-reverse div {
-            position: relative;
-        }
+        
         /* &.lines-reverse div::after {
             content: "";
             position: absolute;
@@ -92,5 +96,3 @@
             display: block;
             right: -15%;
         } */
-    }
-}

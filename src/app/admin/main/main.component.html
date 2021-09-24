@@ -1,78 +1,58 @@
-<ng-container *ngIf="!isLogged$; else isLogged">
-	<!-- LOGIN -->
-	<div class="section">
-		<form class="login" (submit)="login()">
-			<!-- USER -->
-			<mat-form-field appearance="outline" aria-autocomplete="none">
-				<mat-label> User </mat-label>
-				<input matInput placeholder="User" type="text" name="user" [(ngModel)]="user" autocomplete="none">
-			</mat-form-field>				
-		    <!-- PASSWORD -->
-			<mat-form-field appearance="outline">
-				<mat-label> Password </mat-label>
-				<input matInput [type]="hide ? 'password' : 'text'" name="password" [(ngModel)]="password">
-				<!-- ICON SHOW / HIDE PASSWORD -->
-				<button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-					<mat-icon class="icon color-primario">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-    			</button>
-			</mat-form-field>
-			<!-- BUTTON LOGIN -->
-			<button class="button-login" mat-raised-button type="submit" (click)="login()"> Log In </button>
-		</form>
-	</div>
-</ng-container>
-<ng-template #isLogged>
-	<!-- PLAYERS -->
-	<div class="wrapper">
-		<form class="form" (submit)="onSubmit(participante)">
-			<!-- PLAYER NAME -->
-			<mat-form-field appearance="outline">
-				<input matInput [placeholder]="'Agregar Participante'" name="participante" [(ngModel)]="participante">
-				<mat-hint><strong> siguiente: ronda({{ next }}) </strong></mat-hint>
-			</mat-form-field> 
-			<!-- PLAYERS inscriptos -->
-			<mat-form-field appearance="outline">
-				<input disabled matInput [placeholder]="'quedan '+ items.length">
-			<mat-label><strong> Quedan:({{ items.length }}) </strong></mat-label>
-			</mat-form-field>
-			<!-- SAVE DATA -->
-			<button class="btn-save" mat-button type="submit" (click)="save()"> save data</button>
-		</form>
-		<div class="wrap" >
-			<!-- PLAYERS -->
-			<!-- <table mat-table #table [dataSource]="items">
-				<ng-container matColumnDef="nombre">
-					<th mat-header-cell *matHeaderCellDef> nombre </th>
-					<td mat-cell *matCellDef="let row"> {{row.name}} </td>
-				</ng-container>
-				<ng-container matColumnDef="actions">
-					<th mat-header-cell *matHeaderCellDef> actions </th>
-					<td mat-cell *matCellDef="let row"> 
-						<button mat-mini-fab><mat-icon>check</mat-icon></button>
-						<button mat-mini-fab><mat-icon>close</mat-icon></button>
-					</td>
-				</ng-container>
-				<tr mat-header-row *matHeaderRowDef="['nombre','actions']"></tr>
-				<tr mat-row *matRowDef="let row; columns: ['nombre', 'actions'];"></tr>
-			</table> -->
-			<mat-list>
-				<mat-list-item *ngFor="let item of items" >
+
+<!-- LOGIN -->
+<div class="section" *ngIf="!isLogged$">
+	<form class="login" (submit)="login()">
+		<!-- USER -->
+		<mat-form-field appearance="outline" aria-autocomplete="none">
+			<mat-label> User </mat-label>
+			<input matInput placeholder="User" type="text" name="user" [(ngModel)]="user" autocomplete="none">
+		</mat-form-field>				
+		<!-- PASSWORD -->
+		<mat-form-field appearance="outline">
+			<mat-label> Password </mat-label>
+			<input matInput [type]="hide ? 'password' : 'text'" name="password" [(ngModel)]="password">
+			<!-- ICON SHOW / HIDE PASSWORD -->
+		</mat-form-field>
+		<!-- BUTTON LOGIN -->
+		<button class="button-login" mat-raised-button type="submit" (click)="login()"> Log In </button>
+	</form>
+</div>
+<!-- PLAYERS -->
+<div class="wrapper" *ngIf="isLogged$">
+	<form class="form" (submit)="onSubmit(participante)">
+		<!-- PLAYER NAME -->
+		<mat-form-field appearance="outline">
+			<input matInput [placeholder]="'Agregar Participante'" name="participante" [(ngModel)]="participante">
+		</mat-form-field> 
+		<!-- PLAYERS inscriptos -->
+		<mat-form-field appearance="outline">
+			<input disabled matInput [placeholder]="'quedan '+ items.length">
+		</mat-form-field>
+		<!-- SAVE DATA -->
+		<button class="btn-save" mat-button type="submit" (click)="save()"> save data</button>
+	</form>
+	<div class="wrap" >
+		<!-- PLAYERS -->
+		<mat-list>
+			<mat-list-item *ngFor="let item of items" >
+				<!-- <span>
+					{{ item.id }}
+				</span> -->
+				
+				<span>
 					{{ item.name}}
-					<div>
-						<!-- <button mat-mini-fab color="primary"><mat-icon>check</mat-icon></button> -->
-						<!-- <button mat-mini-fab color="accent"><mat-icon>close</mat-icon></button> -->
-						<mat-checkbox [(ngModel)]="item.isWinner">winner</mat-checkbox>
-					</div>
-				</mat-list-item>
-			</mat-list>
-		</div>
-		<!-- MAYBE SE VA LA VERGA -->
-		<div class="button-shuffle">
-			<button color="accent" mat-button (click)="nextRound(next)">
-				next round !
-			</button>
-		</div>
+				</span>
+				<mat-checkbox matPrefix [(ngModel)]="item.isWinner"></mat-checkbox>
+			</mat-list-item>
+			
+		</mat-list>
 	</div>
-</ng-template>
+	<!-- MAYBE SE VA LA VERGA -->
+	<div class="button-shuffle">
+		<button mat-raised-button (click)="nextRound(next)">
+			next round !
+		</button>
+	</div>
+</div>
 
 

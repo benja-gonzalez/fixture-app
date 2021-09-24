@@ -1,23 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
-$primario       : #D11481;
+$primario       : #9D4EDD;//
 $secundario     : #FF5733;
+$rosaditto      : #D11481;
 $padding-default: 12px;
 *, body {
 	margin: 0;
 	padding: 0;
 	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-	height: 100%;
+	/* font-size: 100%; */
+	/* font: inherit;
+	vertical-align: baseline; */
 	font-family: Roboto, "Helvetica Neue", sans-serif;
 }
-// HTML5 display-role reset for older browsers
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-  	display: block;
-}
 body {
-	background: url('./assets/header/newImage.jfif') no-repeat center center;
-	background-size:100% 100%;
+	
 }

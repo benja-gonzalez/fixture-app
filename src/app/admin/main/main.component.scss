@@ -1,53 +1,75 @@
 @import '../../../styles.scss';
 
 .wrapper {
+    background: url('../../../assets/header/newImage.jfif') no-repeat center center;
+	background-size:100% 100%;
     width: 100%;
-    margin: auto;
+    /* height: !important; */
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;  
+    justify-content: space-between;
    /*  background: rgb(2,0,36); */
-   /*  background: radial-gradient(circle, rgba(2,0,36,.5) 0%, rgba(118,9,121,.5) 35%, rgba(0,212,255,.5) 100%); */
-    
-}
-.wrapper form.form {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    margin: auto;
-    width: 700px;
-    height: 200px;
-    background-color: $primario;
-    border: 2px solid $secundario;
-    border-radius: 4px;
-    background-color:#000000!important;     
-}
-.wrapper .wrap {
-      // rgb(2,0,36)!important;
-    margin-top: auto;
-    border-radius: 4px;
-    background-color:#000000!important;
-    border: 1px solid $primario;
-    width: 700px;
-    > mat-list-item {
+    // background: radial-gradient(circle, rgba(2,0,36,.5) 0%, rgba(118,9,121,.5) 100%);
+    .form {
+        margin-top: 20px;
+        border: 1px solid $primario;
+        width: 50%;
+        background-color:#000000!important;
         display: flex;
         align-items: center;
-        justify-content: center;
-        width: 100%;
+        justify-content: space-between;
+        padding: 12px;
+        margin-bottom: 0px;
+        border-radius: 5PX;
+        margin-bottom:12px;
+        > ::ng-deep mat-form-field {
+            margin: 0!important;
+            color: #ffffff!important;
+            
+        }
+        button {
+            margin-right:12px ;
+        }
     }
+    .wrap {
+        // rgb(2,0,36)!important;
+        border-radius: 4px;
+        background-color:#000000!important;
+        opacity: .7;
+        border: 1px solid $primario;
+        width: 758px;
+        padding: 12px;
+        mat-list {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            mat-list-item {
+                width: 30%;
+                span {
+                    margin: auto;
+                    text-align: center;
+                    height: 50%;
+                }
+            }
+        }
+    }
+    
 }
-mat-form-field {
-    color: #000000; 
-}
+/* .wrapper 
+   
+} */
 .form .btn-save {
     border: 1px solid transparent;
+    background-color: #ffffff;
+    background-color: $primario;
+    color: #ffffff;
+    transition: all 1.5s ease;
     border-radius: 5px;
     &.btn-save:hover {
         border: 1px solid $secundario;
-        background-color: $primario;
-        color: #ffffff;
-        transition: all 1.5s ease;
     }
     
 }
@@ -55,28 +77,25 @@ mat-form-field {
     border: 1px transparent solid;
     border-radius: 5px;
     align-self: center;
-    margin: auto;
-    margin-right:800px;
     button { 
         width: 200px;
         font-weight: bold;
         font-size: 1.5em;
+        background-color: $primario;
+        margin: 12px auto;
     }
 }
-.wrapper form.form {
-    background: linear-gradient(to left, $secundario)!important;
-}
-
 .section {
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;
-    width: 100%;
-    margin: auto;
-    box-sizing: border-box;
-    form.login {
-        height: 400px!important;
+    gap: 10px;
+    background: radial-gradient(circle, rgba(2,0,36,.5) 0%, rgba(118,9,121,.5) 100%);
+    form {
+        margin-top: 20px;
+        height: 600px!important;
+     /*    height: 400px!important;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -85,10 +104,10 @@ mat-form-field {
         > .mat-form-field {
             margin: auto;
             width: 60%;
-        }
+        } */
     }
 }
-form.login {
+/* form.login {
     background: rgb(2,0,36);
     background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(118,9,121,1) 35%, rgba(0,212,255,1) 100%);
     border: 1px $primario solid;
@@ -112,4 +131,4 @@ form.login {
     input:focus {
         background: transparent;
     }
-}
+} */

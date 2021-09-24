@@ -23,13 +23,15 @@ import { MatTableModule } from '@angular/material/table';
 import { MainComponent } from './admin/main/main.component';
 import { FixtureComponent } from './components/fixture/fixture.component';
 import { LoginComponent } from './admin/login/login.component';
+import { GridComponent } from './components/grid/grid.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainComponent,
     FixtureComponent,
-    LoginComponent
+    LoginComponent,
+    GridComponent
   ],
   imports: [
     BrowserModule,

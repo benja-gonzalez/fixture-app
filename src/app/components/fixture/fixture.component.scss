@@ -1,119 +1,17 @@
 @import '../../../styles.scss';
 
-.main {
-    position: relative;
-    box-sizing: border-box;
+.section {
     margin: auto;
-    margin-top: 20px;
-    //max-width:1300;
     width: 100%;
-    div {
-        font-weight: bold;
-        white-space: nowrap;
+    height: auto;
+    .colum   {
+        display: flex;        
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;        
+        > div.group .jugador {
+            border: 1px solid green;
+            padding: 20px;
+        }
     }
-    
-    .column {
-        display: flex;
-        margin: auto!important;
-        padding: $padding-default;
-        border: solid 2px transparent;
-        .group {
-            margin: auto;
-            border: solid 2px transparent;
-            padding: $padding-default;
-            width: 45%;
-            .player {
-                padding:$padding-default;
-                border: solid 2px transparent;
-                text-align: center;
-            }
-            .semifinal {
-                border: 1px solid $secundario;
-                border-radius: 5px;
-                margin: auto;
-                padding: $padding-default;
-                /* background: rgb(2,0,36);
-                background: linear-gradient(90deg, rgba(199, 0, 57, .5) 0%, rgba(118,9,121,.5) 35%, rgba(144, 12, 63,.5) 100%); */
-                max-width: 1000px;
-                display: flex;
-                /* align-items: center;
-                justify-content: space-between; */
-                .final {
-                    width: 200px!important;
-                    .group.round {
-                        margin: 20px;
-                       .player {
-                        margin: auto;
-                        width: 33.333333333%!important;
-                        /* white-space: nowrap; */
-                       }
-                    }
-                }
-            }
-        }
-        .group.round {
-            .player {
-                border: 1px solid $primario!important;
-                border-radius: 5px;
-                margin: $padding-default;
-            }
-            .player:hover {
-                background: rgba(199, 0, 57, .3);
-                color: #ffffff;
-                cursor: pointer;
-            }
-        }
-        .group.round.right {
-            border-right: 2px solid $secundario
-        }
-        .group.round.left {
-            border-left: 2px solid $secundario;
-        }
-        .group .semifinal {
-            margin: auto;
-            height: 400px;
-            .group.round {
-                display: flex;
-                flex-direction: column;
-                align-content: center!important;
-                justify-content: space-between;
-                align-items:center;
-                width: 33.33333%!important;
-                .player {
-                    width: 60%!important;
-                    text-shadow: 0 0 2px #000000;
-                }
-            }
-            .group.round.final {
-                display: flex;
-                flex-direction: row;
-                width: 40%!important;
-                .player{
-                    width: 100%;  
-                    margin: $padding-default;
-                }
-            }
-            .group .player {
-                width: 100px;
-                margin: $padding-default;
-            }
-        }
-        .cuartos:hover {
-            background: rgba(199, 0, 57, .3);
-            color: #ffffff;
-            cursor: pointer;
-        }
-        .cuartos {
-            border: 1px solid $primario!important;
-            border-radius: 5px;
-            margin: 3px;
-        }
-
-    }
-    .column .semifinal {
-        width: 1300px;
-        margin: auto;
-        /* transform: translateX(-250px); */
-    }
-    
 }

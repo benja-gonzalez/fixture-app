@@ -1,0 +1,96 @@
+@import'../../../styles.scss';
+
+.section {
+    overflow-x: hidden;
+    background: url('../../../assets/header/fondo2.jpg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    opacity: .3;
+
+    .flexible {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 5px;
+        .titulo {
+            border: 1px solid #9D4EDD;
+            padding: 10px;
+            text-align: center;
+            width: 100%;
+            text-shadow: 0px 0px 2px #000000 ;
+            background-color: #000000;
+            color: white;
+        }
+    }
+    .flexible.content {
+        margin-top: 20px;
+    }
+    .flexible.content .column {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        text-align: center;
+        gap: 5px;
+        margin-top: 20px;
+        margin: 0 30px 0 10px;
+        height: 600px;
+        
+        > div {
+            border: 2px solid #9D4EDD;
+            padding: 10px;
+            height: 30px;
+            width: 100%;
+            margin: auto;
+            text-shadow: 0px 0px 2px #000000 ;
+            justify-self: center;
+            background-color: #000000;
+            color: white;
+        }
+       /*  &.lines div::before {
+            content: "";
+            position: absolute;
+            letter-spacing: 0;
+            border-left: 1px solid #000000;
+            height: 100px;
+            display: block;
+            top: -50%;
+            left: -15%;
+        } */
+        &.lines div {
+            position: relative;
+        }
+        /* &.lines div::after {
+            content: "";
+            position: absolute;
+            letter-spacing: 0;
+            border-top: 2px solid #000000;
+            width: 10px;
+            display: block;
+            left: -15%;
+        } */
+        /* &.lines-reverse div::before {
+            content: "";
+            position: absolute;
+            letter-spacing: 0;
+            border-left: 1px solid #000000;
+            height: 230%;
+            display: block;
+            top: -50%;
+            right: -15%;
+        } */
+        &.lines-reverse div {
+            position: relative;
+        }
+        /* &.lines-reverse div::after {
+            content: "";
+            position: absolute;
+            border-top: 2px solid #000000;
+            
+            width: 10px;
+            display: block;
+            right: -15%;
+        } */
+    }
+}

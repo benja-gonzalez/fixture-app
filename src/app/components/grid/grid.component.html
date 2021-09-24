@@ -1,0 +1,71 @@
+<img [src]="'../../../assets/header'" alt="">
+<div class="section">
+    <div class="flexible"> <!--  -->
+        <div class="titulo">Octavos</div>
+        <div class="titulo">cuartos</div>
+        <div class="titulo">semifinal</div>
+        <div class="titulo">final</div>
+        <div class="titulo">ganador</div>
+        <div class="titulo">final</div>
+        <div class="titulo">semifinal</div>
+        <div class="titulo">cuartos</div>
+        <div class="titulo">octavos</div>
+    </div>
+    <div class="flexible content">
+        <div class="column"><!-- OCTAVOS -->
+            <div>{{players[0].name}}</div>
+            <div>{{players[1].name}}</div>
+            <div>{{players[2].name}}</div>
+            <div>{{players[3].name}}</div>
+            <div>{{players[4].name}}</div>
+            <div>{{players[5].name}}</div>
+            <div>{{players[6].name}}</div>
+            <div>{{players[7].name}}</div>
+        </div>
+        <div class="column lines"><!-- CUARTOS -->
+            <div>cuartos[0]</div>
+            <div>cuartos[1]</div>
+            
+            <div>cuartos[2]</div>
+            <div>cuartos[3]</div>
+        </div>
+        <div class="column lines"><!-- SEMIFNAL -->
+            <div>semifinal[0]</div>
+
+            <div>semifinal[1]</div>
+        </div>
+        <div class="column lines"><!-- PRIMER FINALISTA -->
+            <div>finalista[0]</div>
+        </div>
+        <div class="column winner"><!-- WINNER -->
+
+            <div>Ganador : <span> {{ winner }} </span></div>
+            
+        </div>
+        <div class="column lines-reverse"><!-- SEGUNDO FINALISTA -->
+            <div>finalista[1]</div>
+        </div>
+        <div class="column lines-reverse"><!-- SEMIFINAL -->
+            <div>semifinal[3]</div>
+
+            <div>semifinal[4]</div>
+        </div>
+        <div class="column lines-reverse"><!-- CUARTOS -->
+            <div>cuartos[4]</div>
+            <div>cuartos[5]</div> 
+
+            <div>cuartos[6]</div>
+            <div>cuartos[7]</div>
+        </div>
+        <div class="column"><!-- OCTAVOS -->
+            <div>{{players[8].name}}</div>
+            <div>{{players[9].name}}</div>
+            <div>{{players[10].name}}</div>
+            <div>{{players[11].name}}</div>
+            <div>{{players[12].name}}</div>
+            <div>{{players[13].name}}</div>
+            <div>{{players[14].name}}</div>
+            <div>{{players[15].name}}</div>
+        </div>
+    </div>
+</div>

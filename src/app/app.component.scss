@@ -1,15 +1,10 @@
 .section {
-    width: 100%;
-    .header{
-        > 
-        img {
-            width: 100%;
-            opacity: 0.8;
-            position: fixed;
-        }
-    }
+    width: 100%!important;
+    margin: auto;
+    height: 100%;
     .wrapper {
         width: 100%!important;
-        margin: auto;        
+        margin: auto;
+        height: auto;      
     }
 }

@@ -15,7 +15,7 @@ export class GridComponent implements OnInit {
 	cuartos  : Participantes = [];
 	semifinal: Participantes = [];
 	finalista: Participantes = [];
-	winner: Participante;
+	winner: Participantes;
 
 	constructor(private _ds: DataService, private _shs:SharedService) {
 		this.players = _ds.getParticipantes();

@@ -25,7 +25,7 @@ export class GridComponent implements OnInit {
 
 		this.finalista = JSON.parse(localStorage.getItem('final')??'[]');
 	
-		this.winner = JSON.parse(localStorage.getItem('ganador') ?? '');
+		this.winner = JSON.parse(localStorage.getItem('ganador') || '[]');
 	}
 
 	ngOnInit(): void {

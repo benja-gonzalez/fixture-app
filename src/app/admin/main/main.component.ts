@@ -170,7 +170,7 @@ export class MainComponent implements OnInit, OnDestroy, AfterViewInit {
 	 */
 	private _resetPlayers(from: Participantes): Participantes {
 		//const response = 
-		from = from.map(e => { e.isWinner == false; return e; });// creo un arreglo nuevo y lo retorno;
+		from = from.map(e => { e.isWinner = false; return e; });// creo un arreglo nuevo y lo retorno;
 	/* 	from?.forEach(
 			(value) => {
 				value.isWinner = false;

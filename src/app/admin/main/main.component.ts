@@ -1,9 +1,7 @@
 import { AfterViewInit, Component, OnDestroy, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
-import { roundSaved } from 'dist/fixture-app/assets/data';
 import { SharedService } from 'src/app/services/shared.service';
 import { DataService } from '../../services/data.service';
-import { CUARTOS, FINAL, Finalista, Participante, Participantes, SEMIFINAL, OCTAVOS } from '../../types/types';
+import { CUARTOS, FINAL, Finalista, Participante, Participantes, SEMIFINAL } from '../../types/types';
 import { LoginService } from '../login/login.service';
 const _DATA$ = import('../../../assets/data').then(m => m.getData());
 
@@ -91,8 +89,8 @@ export class MainComponent implements OnInit, OnDestroy, AfterViewInit {
 	 * Remove a item passed in param
 	 * @param item items to be removed
 	 */
-	remove(item: string): void {
-		const result = this.items.filter(v => v.name !== item);
+	remove(item: Participante): void {
+		const result = this.items.filter(v => v.name !== item.name);
 		this.items = result;
 		this.save();
 	}

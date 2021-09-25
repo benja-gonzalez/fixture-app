@@ -1,7 +1,9 @@
 import { AfterViewInit, Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
+import { roundSaved } from 'dist/fixture-app/assets/data';
+import { SharedService } from 'src/app/services/shared.service';
 import { DataService } from '../../services/data.service';
-import { CUARTOS, FINAL, Finalista, Participante, Participantes, SEMIFINAL } from '../../types/types';
+import { CUARTOS, FINAL, Finalista, Participante, Participantes, SEMIFINAL, OCTAVOS } from '../../types/types';
 import { LoginService } from '../login/login.service';
 const _DATA$ = import('../../../assets/data').then(m => m.getData());
 
@@ -28,8 +30,10 @@ export class MainComponent implements OnInit, OnDestroy, AfterViewInit {
 	password: string = '';
 	hide: boolean = true;
 
-	constructor(private _ds: DataService, private _ls: LoginService) {
-		_DATA$.then(m => this.items = m);
+	constructor(private _ds: DataService, private _ls: LoginService, private _shs:SharedService) {
+		_DATA$.then(m => {
+			this.items = m
+		});
 	}
 	/**
 	 * Angular default ngOnInit() hook
@@ -44,7 +48,7 @@ export class MainComponent implements OnInit, OnDestroy, AfterViewInit {
 		this._ds.getData().subscribe(
 			data => {
 				this.items = data;
-				console.log({data})
+				/* console.log({data}) */
 			}
 		);
 		this._ls.getLogin().subscribe(
@@ -65,11 +69,15 @@ export class MainComponent implements OnInit, OnDestroy, AfterViewInit {
 	 * @param value player name to be created
 	 */
 	onSubmit(value: string): void {
-		if (value && !this.items.find(v => v.name === value)) {
-			this.items?.push(this._createParticipante(value));
+		if (value && !this.items.find(v => v.name === value) && (this.items.length < 16)) {
+			// this.items?.push(this._createParticipante(value));
+
+			// creo un arreglo y leasigno a la ultima posicion el elemento
+			this.items = [...this.items, this._createParticipante(value)]; 
 			this.save();
+			this._shs.emitChange(true);
 		}
-		this.participante = '';
+		//this.participante = '';
 	}
 	/**
 	 * Save data, just in case
@@ -94,7 +102,8 @@ export class MainComponent implements OnInit, OnDestroy, AfterViewInit {
 	 */
 	nextRound(next: string): void {
 		this.items = this._onNextRound(next);
-		this.save();
+		this._shs.emitChange(next);
+		//this.save();
 	}
 	/**
 	 * Loggin th user
@@ -108,26 +117,41 @@ export class MainComponent implements OnInit, OnDestroy, AfterViewInit {
 	 * @returns players winners && rest's to
 	 */
 	private _onNextRound(nextRound: string): Participantes {
+		if (nextRound === 'GANADOR') {
+			const response = this.items.filter(v => v.isWinner === true);
+			localStorage.setItem('ganador', JSON.stringify(response));
+			//this.save();
+			this._shs.emitChange(this.next);
+			return [];
+		}
 		switch (nextRound) {
 			case SEMIFINAL:
 				{
 					const response = this.items.filter(v => v.isWinner === true);
-					this.save();
+					localStorage.setItem('semifinal', JSON.stringify(response));
+					this.next = FINAL;
+					//this.save();
+					this._shs.emitChange(this.next);
 					return this._resetPlayers(response);
 				}
 			case FINAL:
 				{
 					const response = this.items.filter(v => v.isWinner === true);
 					//this._saveWinners();
-					this.save();
+					this.next = 'GANADOR';
+					//this.save();
+					localStorage.setItem('final', JSON.stringify(response));
+					this._shs.emitChange(this.next);
 					return this._resetPlayers(response);
 				}
 			default:
-				const response = this.next === CUARTOS ? SEMIFINAL : FINAL;
-				this.next = response;
 				const resets = this.items.filter(v => v.isWinner === true);
+				localStorage.setItem('cuartos', JSON.stringify(resets));
+				this._shs.emitChange(this.next);
+				const response = this.next === CUARTOS ? SEMIFINAL : SEMIFINAL;
+				this.next = response;
 				//this.items = resets;
-				this.save();
+				//this.save();
 				return this._resetPlayers(resets);
 		}
 	}
@@ -146,10 +170,11 @@ export class MainComponent implements OnInit, OnDestroy, AfterViewInit {
 	 */
 	private _resetPlayers(from: Participantes): Participantes {
 		//const response = 
-		from?.forEach(
+		from = from.map(e => { e.isWinner == false; return e; });// creo un arreglo nuevo y lo retorno;
+	/* 	from?.forEach(
 			(value) => {
 				value.isWinner = false;
-			});
+			}); */
 		return from;
 	}
 	private _saveWinners(arr:any): any {

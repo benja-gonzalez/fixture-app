@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { setData, roundSaved, getData } from '../../assets/data';
 import { Participantes } from '../types/types';
 import { Observable, Subject } from 'rxjs';
-const _DATA$ = import('../../assets/data').then(m => m.getData());
+/* const _DATA$ = import('../../assets/data').then(m => m.getData()); */
 
 @Injectable({
   providedIn: 'root'
@@ -12,15 +12,18 @@ export class DataService implements OnDestroy {
 
     private data: Subject<Participantes> = new Subject<Participantes>();
 	public data$: Observable<Participantes> = new Observable<Participantes>();
+	private DATA: Participantes = getData();
 	
 	constructor(private _http: HttpClient) {
-		_DATA$.then(
+		/* _DATA$.then(
 			m => {
 				this.data$ = this.data.asObservable();
 				this.data.next(m);
 				//this.data.complete();
 			}
-		);
+		); */
+		this.data.next(this.DATA);
+		this.data$ = this.data.asObservable();
 	}
 	/**
 	 * Default Angular ngOnDestroy() hook
@@ -56,5 +59,9 @@ export class DataService implements OnDestroy {
 	 */
 	public getData(): Observable<Participantes> {
 		return this.data$;
+	}
+
+	public getParticipantes(): Participantes {
+		return this.DATA;
 	}
 }

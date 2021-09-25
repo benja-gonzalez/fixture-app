@@ -12,3 +12,4 @@ export type Finalista = [Participante, Participante] | [null, null];
 export const CUARTOS = 'CUARTOS';
 export const SEMIFINAL = 'SEMIFINAL';
 export const FINAL = 'FINAL';
+export const OCTAVOS = 'OCTAVOS';

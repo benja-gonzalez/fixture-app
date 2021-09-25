@@ -2,10 +2,10 @@
 
 .section {
     overflow-x: hidden;
-    background: url('../../../assets/header/fondo3.png');
-    background-repeat: no-repeat;
-    background-size: 100%;
-
+    //background: url('../../../assets/header/fondo_fondo3.png') no-repeat center center;
+    //background-size: 100%!important;
+    height: 100%;
+    width: 100%!important;
     .flexible {
         display: flex;
         flex-direction: row;
@@ -20,7 +20,7 @@
             text-shadow: 0px 0px 2px #FFFFFF ;
             background-color: #000000;
             color: white;
-            opacity: .5;
+            opacity: .7;
         }
     }
     .flexible.content {
@@ -36,9 +36,13 @@
         margin-top: 20px;
         margin: 0 30px 0 10px;
         height: 600px;
-        opacity: .5;
+        width: 100%;
+        opacity: .7;
         > div {
-            border: 2px solid #9D4EDD;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #9D4EDD;
             padding: 10px;
             height: 30px;
             width: 100%;
@@ -54,45 +58,62 @@
         &.lines div {
             position: relative;
         }
-    }
-}
-       /*  &.lines div::before {
+        &.lines div::before {
             content: "";
             position: absolute;
             letter-spacing: 0;
-            border-left: 1px solid #000000;
+            border-left: 1px solid $contraste;
             height: 100px;
             display: block;
             top: -50%;
             left: -15%;
-        } */
-        
-        /* &.lines div::after {
+        }
+        &.lines div::after {
             content: "";
             position: absolute;
             letter-spacing: 0;
-            border-top: 2px solid #000000;
-            width: 10px;
+            border-top: 2px solid $contraste;
+            width: 20px;
             display: block;
+            top:48%;
             left: -15%;
-        } */
-        /* &.lines-reverse div::before {
+            //transform: translateX(0px);
+        }
+        &.lines.semifinal div::before {
+            height: 150px !important;
+            transform: translateY(-24px);
+        }
+        &.lines.final div::before {
+            height: 305px !important;
+            transform: translateY(-100px);
+        }
+        &.lines-reverse div::before {
             content: "";
             position: absolute;
             letter-spacing: 0;
-            border-left: 1px solid #000000;
+            border-left: 1px solid $contraste;
             height: 230%;
             display: block;
             top: -50%;
             right: -15%;
-        } */
-        
-        /* &.lines-reverse div::after {
+        }
+        &.lines-reverse div::after {
             content: "";
             position: absolute;
-            border-top: 2px solid #000000;
-            
-            width: 10px;
+            border-top: 2px solid $contraste;
+            width: 20px;
             display: block;
             right: -15%;
-        } */
+            top:48%;
+        }
+        &.lines-reverse.semifinal div::before {
+            height: 150px !important;
+            transform: translateY(-24px);
+        }
+        &.lines-reverse.final div::before {
+            height: 305px !important;
+            transform: translateY(-100px);
+        }
+    }
+}
+       

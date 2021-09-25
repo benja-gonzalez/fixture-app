@@ -29,17 +29,14 @@
 			<input disabled matInput [placeholder]="'quedan '+ items.length">
 		</mat-form-field>
 		<!-- SAVE DATA -->
-		<button class="btn-save" mat-button type="submit" (click)="save()"> save data</button>
+		<button class="btn-save"  mat-button type="submit" (click)="save()"> save data</button>
 	</form>
 	<div class="wrap" >
 		<!-- PLAYERS -->
 		<mat-list>
 			<mat-list-item *ngFor="let item of items" >
-				<!-- <span>
-					{{ item.id }}
-				</span> -->
 				
-				<span>
+				<span (click)="item.isWinner = !item.isWinner">
 					{{ item.name}}
 				</span>
 				<mat-checkbox matPrefix [(ngModel)]="item.isWinner"></mat-checkbox>
@@ -49,7 +46,7 @@
 	</div>
 	<!-- MAYBE SE VA LA VERGA -->
 	<div class="button-shuffle">
-		<button mat-raised-button (click)="nextRound(next)">
+		<button mat-raised-button type="button" (click)="nextRound(next)">
 			next round !
 		</button>
 	</div>

@@ -11,3 +11,4 @@ export const setData = (newData: Participantes,round?:string): void => {
 export const roundSaved = (): string => JSON.parse(localStorage.getItem('round') ?? '');
 
 export const getData = (): Participantes => JSON.parse(localStorage.getItem('data') ?? '[]');
+//export const getCuartos = (): Participantes => JSON.parse(localStorage.getItem())

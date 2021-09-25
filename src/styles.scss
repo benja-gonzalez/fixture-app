@@ -2,16 +2,14 @@
 $primario       : #9D4EDD;//
 $secundario     : #FF5733;
 $rosaditto      : #D11481;
+$contraste       : #FFC72C;
 $padding-default: 12px;
+
+
 *, body {
 	margin: 0;
 	padding: 0;
 	border: 0;
-	/* font-size: 100%; */
-	/* font: inherit;
-	vertical-align: baseline; */
 	font-family: Roboto, "Helvetica Neue", sans-serif;
-}
-body {
-	
+	color: $contraste!important;
 }

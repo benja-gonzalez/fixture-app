@@ -180,5 +180,12 @@ export class MainComponent implements OnInit, OnDestroy, AfterViewInit {
 	private _saveWinners(arr:any): any {
 		let result = [];
 	}
+	public clear(): void {
+		localStorage.removeItem('cuartos');
+		localStorage.removeItem('semifinal');
+		localStorage.removeItem('final');
+		localStorage.removeItem('ganador');
+		localStorage.removeItem('round');
+	}
 
 }

@@ -1,9 +1,8 @@
 @import'../../../styles.scss';
 
 .section {
-    overflow-x: hidden;
+
     //background: url('../../../assets/header/fondo_fondo3.png') no-repeat center center;
-    //background-size: 100%!important;
     height: 100%;
     width: 100%!important;
     .flexible {
@@ -66,7 +65,7 @@
             height: 100px;
             display: block;
             top: -50%;
-            left: -15%;
+            left: -13%;
         }
         &.lines div::after {
             content: "";
@@ -76,7 +75,7 @@
             width: 20px;
             display: block;
             top:48%;
-            left: -15%;
+            left: -13%;
             //transform: translateX(0px);
         }
         &.lines.semifinal div::before {
@@ -95,7 +94,7 @@
             height: 230%;
             display: block;
             top: -50%;
-            right: -15%;
+            right: -13%;
         }
         &.lines-reverse div::after {
             content: "";
@@ -103,7 +102,7 @@
             border-top: 2px solid $contraste;
             width: 20px;
             display: block;
-            right: -15%;
+            right: -13%;
             top:48%;
         }
         &.lines-reverse.semifinal div::before {

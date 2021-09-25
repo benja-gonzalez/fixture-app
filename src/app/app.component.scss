@@ -1,7 +1,9 @@
 .section {
-    background-image: url('../assets/header/newImage.jfif');
+    background-image: url('../assets/header/freestyle-competi.png');
     background-repeat: no-repeat;
-    background-size: 100% 100%;
+    background-size: cover!important;
+    background-position: 85% center;
+    /* background-size: 100% 100%; */
     width: 100vw!important;
     height: 100vh;
     .wrapper {

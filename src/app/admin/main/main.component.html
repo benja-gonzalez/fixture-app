@@ -35,13 +35,18 @@
 	<div class="wrap" >
 		<!-- PLAYERS -->
 		<mat-list>
-			<mat-list-item *ngFor="let item of items" >
+			<mat-list-item (click)="item.isWinner = !item.isWinner" [ngStyle]="{'cursor':'pointer'}" *ngFor="let item of items" >
 				
-				<span (click)="item.isWinner = !item.isWinner">
+				<span [ngStyle]="{'cursor':'pointer'}" (click)="item.isWinner = !item.isWinner">
 					{{ item.name}}
 				</span>
-				<mat-checkbox matPrefix [(ngModel)]="item.isWinner"></mat-checkbox>
+
+				<mat-checkbox matPrefix [(ngModel)]="item.isWinner"></mat-checkbox> 
+
+				<mat-icon (click)="remove(item)" [ngStyle]="{'margin-left':'12px','cursor':'pointer'}" class="">clear</mat-icon>
+				<!-- <mat-icon aria-hidden="true" aria-label="Example home icon">clear</mat-icon> -->
 			</mat-list-item>
+			
 			
 		</mat-list>
 	</div>

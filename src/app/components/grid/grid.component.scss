@@ -37,19 +37,22 @@
         height: 600px;
         width: 100%;
         opacity: .7;
+        text-shadow: 0px 0px 2px #000000 ;
+        
         > div {
             display: flex;
             align-items: center;
             justify-content: center;
             border: 1px solid #9D4EDD;
-            padding: 10px;
+            padding: 8px;
             height: 30px;
             width: 100%;
             margin: auto;
-            text-shadow: 0px 0px 2px #000000 ;
+            text-shadow: 0px 0px 3px #000000 ;
             justify-self: center;
             background-color: #000000;
             color: white;
+            font-size: 1.2em;
         }
         &.lines-reverse div {
             position: relative;
@@ -94,7 +97,7 @@
             height: 230%;
             display: block;
             top: -50%;
-            right: -13%;
+            right: -11%;
         }
         &.lines-reverse div::after {
             content: "";
@@ -102,7 +105,7 @@
             border-top: 2px solid $contraste;
             width: 20px;
             display: block;
-            right: -13%;
+            right: -11%;
             top:48%;
         }
         &.lines-reverse.semifinal div::before {

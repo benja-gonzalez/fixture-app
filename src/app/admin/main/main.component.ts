@@ -1,6 +1,5 @@
 import { AfterViewInit, Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
-import { roundSaved } from 'dist/fixture-app/assets/data';
 import { SharedService } from 'src/app/services/shared.service';
 import { DataService } from '../../services/data.service';
 import { CUARTOS, FINAL, Finalista, Participante, Participantes, SEMIFINAL, OCTAVOS } from '../../types/types';

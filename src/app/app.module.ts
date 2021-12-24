@@ -23,6 +23,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MainComponent } from './admin/main/main.component';
 import { LoginComponent } from './admin/login/login.component';
 import { GridComponent } from './components/grid/grid.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { GridComponent } from './components/grid/grid.component';
     MatSelectModule,
     MatCheckboxModule,
     MatGridListModule,
-    MatTableModule
+    MatTableModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]
